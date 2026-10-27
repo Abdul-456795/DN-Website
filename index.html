@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dharun Niswan Arabic College | Yesterday, Today & Tomorrow</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Open+Sans:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-dark: #1B5E20;
+            --primary-green: #2E7D32;
+            --accent-green: #4CAF50;
+            --bg-light: #E8F5E9;
+            --text-dark: #111111;
+            --text-gray: #222222;
+            --border-color: #DCE8DE;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        html, body {
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.8;
+            position: relative;
+            background-color: #f4f9f4;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: url('background.jpg'); 
+            background-size: cover; 
+            background-position: center top; 
+            background-repeat: no-repeat;
+            opacity: 0.35; 
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-dark);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.9); 
+        }
+
+        p, li {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-size: 1.15rem;
+            font-weight: 500;
+            text-align: justify;
+            text-shadow: 1px 1px 3px rgba(255,255,255,0.9);
+        }
+
+        nav {
+            background-color: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { display: flex; align-items: center; gap: 15px; }
+        .logo-text { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 800; color: var(--text-dark); text-shadow: none; }
+        
+        .nav-right { display: flex; align-items: center; gap: 2rem; }
+        .nav-links { display: flex; gap: 1.2rem; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 700; font-size: 0.9rem; transition: color 0.3s; text-shadow: none; }
+        .nav-links a:hover { color: var(--primary-green); }
+
+        .lang-switch { display: flex; gap: 5px; background: var(--bg-light); padding: 4px; border-radius: 20px; border: 1px solid var(--border-color); }
+        .lang-btn { text-decoration: none; padding: 5px 15px; border-radius: 15px; font-weight: 700; background: var(--primary-green); color: white; font-family: 'Open Sans', sans-serif; font-size: 0.9rem; text-shadow: none; }
+
+        /* Contact Info in Nav */
+        .nav-contact { display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--primary-dark); font-size: 1rem; text-shadow: none; }
+        .nav-contact i { color: var(--accent-green); }
+        @media (max-width: 992px) { .nav-contact { display: none; } }
+
+        .hero {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            margin: 7rem auto 2rem auto;
+            max-width: 90%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-logo {
+            max-height: 140px;
+            width: auto;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.1));
+        }
+
+        .hero h1 { font-size: 3.5rem; margin-bottom: 0.5rem; }
+        .hero .subtitle { font-size: 1.4rem; color: var(--primary-green); font-style: italic; font-weight: 600; letter-spacing: 2px; margin-bottom: 2.5rem; text-align: center; }
+        .bismillah { background-color: rgba(255, 255, 255, 0.9); padding: 1rem 2.5rem; border-radius: 50px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); font-family: 'Playfair Display', serif; color: var(--text-dark); font-weight: 800; font-size: 1.2rem; border: 1px solid var(--primary-green); text-align: center; display: inline-block; }
+
+        .section-container { max-width: 1100px; margin: 3rem auto; padding: 4rem 3rem; background: rgba(255, 255, 255, 0.88); backdrop-filter: blur(10px); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.6); }
+        @media (max-width: 768px) { 
+            .section-container { padding: 2rem 1.5rem; margin: 2rem 1rem; } 
+            .hero { padding: 6rem 1rem 3rem; margin: 6rem 1rem 2rem 1rem; }
+            .hero-logo { max-height: 90px; }
+        }
+
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; position: relative; color: var(--text-dark); }
+        .section-title::after { content: ''; display: block; width: 80px; height: 4px; background-color: var(--primary-green); margin: 1rem auto 0; border-radius: 2px; }
+
+        .highlight-box { background-color: rgba(232, 245, 233, 0.95); border-left: 6px solid var(--primary-green); padding: 2rem; border-radius: 0 8px 8px 0; margin: 2rem 0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .highlight-box p { margin: 0; color: var(--text-dark); font-weight: 700; font-size: 1.15rem; text-align: center; text-shadow: none; }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .custom-list { list-style: none; padding: 0; }
+        .custom-list li { position: relative; padding-left: 2rem; margin-bottom: 1rem; }
+        .custom-list li::before { content: '\f00c'; font-family: 'FontAwesome'; position: absolute; left: 0; top: 6px; color: var(--primary-dark); }
+
+        .data-table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: #ffffff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden; }
+        .data-table th, .data-table td { padding: 1.2rem; text-align: left; border-bottom: 1px solid var(--border-color); text-shadow: none; font-size: 1.05rem; }
+        .data-table th { background-color: var(--text-dark); color: #fff; font-weight: 700; }
+        .data-table tr:last-child td { border-bottom: none; }
+
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin: 3rem 0; }
+        .stat-card { background: #ffffff; padding: 2.5rem 1.5rem; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; border: 1px solid var(--border-color); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .stat-number { font-size: 3.5rem; font-weight: 800; color: var(--primary-green); font-family: 'Playfair Display', serif; line-height: 1.1; margin-bottom: 0.5rem; text-shadow: none; }
+        .stat-label { font-weight: 700; color: var(--text-dark); font-size: 1.05rem; line-height: 1.5; text-shadow: none; }
+
+        .admin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .admin-card { background: #ffffff; padding: 2rem; border-radius: 10px; border-left: 4px solid var(--primary-green); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .admin-card h4 { color: var(--text-dark); font-size: 1.2rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; text-shadow: none; }
+        .admin-card p { text-shadow: none; margin-bottom: 0.5rem; font-size: 1.05rem; }
+
+        .donation-section { background: linear-gradient(135deg, rgba(27, 94, 32, 0.95) 0%, rgba(46, 125, 50, 0.95) 100%); color: #fff; padding: 5rem 3rem; margin: 3rem auto; max-width: 1100px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .donation-section h2 { color: #fff; font-size: 2.5rem; margin-bottom: 2rem; text-align: center; text-shadow: none; }
+        .donation-section p { color: #E8F5E9; max-width: 900px; margin: 0 auto 1.5rem auto; font-size: 1.15rem; text-align: center; text-shadow: none; }
+        .quran-quote { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-style: italic; color: #fff; margin: 3rem auto; max-width: 800px; padding: 2rem; border-top: 1px solid rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.2); text-align: center; }
+        .quran-quote span { display: block; font-family: 'Open Sans', sans-serif; font-size: 1rem; font-style: normal; color: var(--accent-green); margin-top: 1rem; font-weight: 700; }
+
+        /* Bank Details Section */
+        .bank-section-wrapper { margin-top: 4rem; background: rgba(0, 0, 0, 0.2); padding: 3rem 2rem; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .bank-title { text-align: center; color: #fff; font-size: 2rem; margin-bottom: 2rem; text-shadow: none; }
+        .bank-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .bank-card { background: #ffffff; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.2); transition: transform 0.3s ease; }
+        .bank-card:hover { transform: translateY(-5px); }
+        .bank-card-header { background: var(--primary-dark); color: #fff; padding: 1.5rem; text-align: center; border-bottom: 4px solid var(--accent-green); }
+        .bank-card-header i { font-size: 2rem; margin-bottom: 0.5rem; color: var(--accent-green); }
+        .bank-card-header h4 { color: #fff; margin: 0; font-size: 1.3rem; text-shadow: none; }
+        .bank-card-body { padding: 2rem; }
+        .bank-row { display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px dashed #ddd; }
+        .bank-row:last-child { border-bottom: none; margin-bottom: 0; }
+        .bank-label { font-weight: 700; color: var(--text-gray); font-size: 1rem; text-shadow: none; }
+        .bank-value { font-weight: 700; color: var(--text-dark); font-size: 1.05rem; text-align: right; text-shadow: none; }
+        .account-number-box { background: var(--bg-light); padding: 1rem; border-radius: 8px; text-align: center; margin-top: 1rem; border: 1px solid var(--primary-green); }
+        .account-number-box span { display: block; font-size: 0.9rem; color: var(--text-gray); font-weight: 600; margin-bottom: 0.3rem; text-shadow: none; }
+        .account-number-box strong { font-family: 'Courier New', Courier, monospace; font-size: 1.4rem; color: var(--primary-dark); letter-spacing: 2px; user-select: all; text-shadow: none; }
+
+        /* Contact Box in Donation */
+        .contact-box {
+            margin-top: 3rem;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 1.5rem;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: none;
+        }
+        .contact-box i { color: var(--accent-green); font-size: 1.8rem; }
+
+        footer { background-color: rgba(17, 17, 17, 0.95); color: #aaa; text-align: center; padding: 3rem 2rem; margin-top: 4rem;}
+        footer h3 { color: #fff; font-size: 1.5rem; text-align: center; text-shadow: none; }
+        footer p { text-align: center; text-shadow: none; }
+
+        @media (max-width: 992px) {
+            .grid-2 { grid-template-columns: 1fr; gap: 2rem; }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero .subtitle { font-size: 1.1rem; }
+            .logo-text { font-size: 1.2rem; }
+            .bank-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <div class="logo-text">Dharun Niswan</div>
+        </div>
+        
+        <div class="nav-right">
+            <div class="nav-links">
+                <a href="#history">History</a>
+                <a href="#origin">Origin</a>
+                <a href="#location">Location</a>
+                <a href="#academics">Academics</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#future">Future Plans</a>
+                <a href="#niswaan">NISWAAN Network</a>
+                <a href="#donate">Donate</a>
+            </div>
+            
+            <!-- Contact Number in Navbar -->
+            <div class="nav-contact">
+                <i class="fa-solid fa-phone"></i> +94 77 554 1238
+            </div>
+            
+            <div class="lang-switch">
+                <a href="arabic.html" class="lang-btn">العربية</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <img src="logo.png" alt="Dharun Niswan Logo" class="hero-logo" onerror="this.style.display='none'">
+        <h1>Dharun Niswan Arabic College</h1>
+        <p class="subtitle">Yesterday, Today & Tomorrow</p>
+        <div class="bismillah">In the Name of Allah, the Most Gracious, the Most Merciful</div>
+    </header>
+
+    <!-- HISTORY & INTRODUCTION -->
+    <section id="history" class="section-container">
+        <h2 class="section-title">Our Heritage & Introduction</h2>
+        <p>It is with immense pleasure that the management of Darun Niswan welcomes you all this peaceful evening. All praise is due to Allah. Alhamdulillah.</p>
+        <p>In the history of Sri Lanka, Arabic Madrasas have a legacy spanning more than 150 years. The first Arabic college in Sri Lanka is recorded to have been established in 1870 in Galle, known as Al-Makkiyya Arabic College. However, there is also a historical account that Al-Musthafawiyya Ahlus Sunnah Arabic College was established in the same area as early as 1867.</p>
+        <p>While the education of men as Islamic scholars is important, bringing about the desired changes in women and families through male scholars alone can be challenging. Sustainable social development requires Islamic knowledge to reach women as well, enabling them to contribute meaningfully to the upbringing of children, the strengthening of families and the development of society.</p>
+        
+        <div class="highlight-box">
+            <p>Recognizing this need, Sri Lanka's first Arabic college for women was established in Kal-Eliya in 1959. Darun Niswan Women's Arabic College emerged in the same spirit, with a commitment to providing women with sound Islamic knowledge and empowering them to fulfil their vital roles within their families and society.</p>
+        </div>
+
+        <p><strong>The Importance of Women's Education:</strong> A mother is a child's first school and the first teacher during the formative years of life. The knowledge, wisdom, values and character of a mother have a profound influence on the development of her children. As the well-known Tamil proverb states, "As the thread, so the sari; as the mother, so the child." Therefore, providing women with access to quality education, particularly Islamic education, is essential for building knowledgeable families and a morally responsible society.</p>
+    </section>
+
+    <!-- ORIGIN & JOURNEY -->
+    <section id="origin" class="section-container">
+        <h2 class="section-title">Origin, Establishment & Our Journey</h2>
+        <p>With this very objective in mind, in early 2008, the need for an Arabic Madrasah in Colombo dedicated to providing Islamic religious education for women was recognized. At that time, there was a significant lack of a properly equipped institution where girls, school-going students, young women, and married women could receive sound and systematic religious education.</p>
+        <p>On 15 January 2008, a consultative meeting was held under the leadership of Ash-Sheikh M. Salman Thaha of Colombo Markaz, Al-Haj M. Riyas Ismail, and Al-Haj M. Rikkaz Mashood. Following an admission interview, 54 female students were selected for the inaugural intake.</p>
+        <p>The official opening ceremony of Dharun Niswan Girls' Arabic College took place on 24 March 2008 at Manel Reception Hall, Baseline Road, Colombo 09. By the grace of Allah, Ash-Shaikh Al-Hafiz Mufti M. Fahim Haneefa Al-Inaami, together with his wife, has continued to serve the institution with dedication and commitment from its inception to the present day.</p>
+        <p><strong>The College's Journey:</strong> Due to the absence of a permanent building of its own, the college operated from several locations over the years. It initially functioned on Baseline Road, subsequently moved to Maligakanda Road, and is currently operating on Dematagoda Road. Despite these challenges, and by the immense grace of Allah, Darun Niswan has continued to develop into one of Sri Lanka's leading institutions dedicated to women's Islamic education.</p>
+    </section>
+
+    <!-- LOCATION IMPORTANCE -->
+    <section id="location" class="section-container">
+        <h2 class="section-title">Why is the Location in Dematagoda Important?</h2>
+        <p>The college is situated in a densely populated and highly congested area. Therefore, many people have suggested that the institution could be relocated to a larger and more spacious, peaceful environment.</p>
+        <p>However, the administration considers Dematagoda to be a highly suitable location for a women’s Madrasah in Central Colombo, for several important reasons.</p>
+        <p>The area is predominantly a 100% Muslim residential community, providing a familiar and comfortable environment for our students. It also enables our girls and women to travel to and from the institution in purdah/hijab without unnecessary inconvenience, while providing them with a sense of safety and security as they pursue their religious education.</p>
+        <p>For these reasons, the administration firmly believes that this location is particularly appropriate for a women’s Islamic educational institution serving the Muslim community in Central Colombo. Based on this vision, and by the grace of Allah, the institution has continued to serve the community in this very area for approximately 18 years, growing steadily and contributing to the religious and educational development of Muslim women.</p>
+    </section>
+
+    <!-- ACADEMICS & ENROLLMENT -->
+    <section id="academics" class="section-container">
+        <h2 class="section-title">Academic Programmes & Enrollment</h2>
+        <p>Darun Niswan currently offers the following educational programmes to meet the diverse learning needs of girls and women:</p>
+        <ul class="custom-list">
+            <li><strong>1. Al-Alimah Mawlawiyyah Shariah Programme</strong> – A five-year programme combining Islamic studies with general education up to the G.C.E. Ordinary Level.</li>
+            <li><strong>2. Al-Hafizah Qur'an Memorisation Programme</strong> – A four-year programme combining Qur'an memorisation with general education up to the G.C.E. Ordinary Level.</li>
+            <li><strong>3. Qur'an Recitation Madrasa (Maktab)</strong> – A three-year programme conducted after regular school hours.</li>
+            <li><strong>4. Al-Hafizah Programme</strong> – A six-year Qur'an memorisation course conducted after regular school hours.</li>
+            <li><strong>5. Weekly Tarbiyah Programme</strong> – A one-and-a-half-year programme designed for married and unmarried women, focusing on Islamic education, personal development and moral upbringing.</li>
+        </ul>
+
+        <h3 style="margin-top: 3rem; text-align: center;">Current Student Enrollment</h3>
+        <p style="text-align: center;">At present, the following number of students are receiving education in the above departments (Approx. 500 students and beneficiaries daily):</p>
+        <div class="stats-grid">
+            <div class="stat-card"><div class="stat-number">90</div><div class="stat-label">Al-Alimah Moulaviyah Shariah</div></div>
+            <div class="stat-card"><div class="stat-number">60</div><div class="stat-label">Al-Hafizah Al-Qur’an Memorization</div></div>
+            <div class="stat-card"><div class="stat-number">140</div><div class="stat-label">Al-Qur’an Recitation (Maktab)</div></div>
+            <div class="stat-card"><div class="stat-number">44</div><div class="stat-label">Al-Hafizah Course</div></div>
+            <div class="stat-card"><div class="stat-number">70</div><div class="stat-label">Weekly Tarbiyah Classes</div></div>
+        </div>
+
+        <h3 style="margin-top: 3rem; text-align: center;">Graduates to Date</h3>
+        <p style="text-align: center;">The following number of students have successfully completed their respective courses and graduated:</p>
+        <div class="stats-grid" style="margin-bottom: 0;">
+            <div class="stat-card"><div class="stat-number">170</div><div class="stat-label">Al-Alimah Moulaviyahs</div></div>
+            <div class="stat-card"><div class="stat-number">104</div><div class="stat-label">Al-Hafizahs</div></div>
+            <div class="stat-card"><div class="stat-number">200</div><div class="stat-label">Al-Qur’an Recitation Maktab</div></div>
+            <div class="stat-card"><div class="stat-number">44</div><div class="stat-label">Al-Hafizah Memorization Dept.</div></div>
+            <div class="stat-card"><div class="stat-number">296</div><div class="stat-label">Weekly Tarbiyah Course</div></div>
+        </div>
+        <div class="highlight-box" style="text-align: center; margin-top: 2rem;">
+            <p>In total, approximately 814 students have successfully completed their courses and graduated from the institution.</p>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+    <section id="achievements" class="section-container">
+        <h2 class="section-title">Achievements and Progress</h2>
+        <p>The Madrasah was established as a non-residential institution, with the objective of ensuring that students remain under the supervision of their parents, particularly during the evening hours.</p>
+        <p>By the grace of Allah, Darun Niswan has operated for the past 18 years as a fully community-oriented, non-profit educational institution, guided by <em>ikhlas</em> (sincerity of intention) and a commitment to serving society rather than pursuing material gain.</p>
+        <p>As a result, the institution has established itself as one of the leading women's Islamic educational institutions in Sri Lanka. Many of its graduates now serve society in a variety of important roles, including:</p>
+        <ul class="custom-list">
+            <li><strong>Islamic educators:</strong> Serving as muallimahs in various Islamic educational institutions.</li>
+            <li><strong>Schoolteachers:</strong> Contributing to the formal education and development of children.</li>
+            <li><strong>Competition achievers:</strong> Securing places among the top three in various national and international competitions.</li>
+            <li><strong>Responsible mothers:</strong> Applying their Islamic knowledge and moral values to raise children and strengthen their families.</li>
+            <li><strong>Community educators:</strong> Establishing and conducting madrasas for children and organizing weekly Islamic classes for women in their respective localities.</li>
+        </ul>
+        <p>It would not be an exaggeration to say that these achievements are a reflection of the sacrifices, dedication and sincere efforts made by the administration of Niswaan Madrasah over the years. Alhamdulillahi Rabbil 'Alameen!</p>
+    </section>
+
+    <!-- FUTURE PLANS & RESTRUCTURING -->
+    <section id="future" class="section-container">
+        <h2 class="section-title">Restructuring & The Need for a Permanent Building</h2>
+        <p>Muslim women in Sri Lanka face various unmet spiritual, educational, social and family-related needs for which dedicated, accessible and appropriate support services remain limited. In response to these unmet needs, the management of Darun Niswan is seeking to restructure and upgrade the existing institution and expand its mission beyond conventional madrasa education.</p>
+
+        <div class="highlight-box">
+            <p>Under this proposed model, the institution would operate through two complementary divisions:</p>
+        </div>
+
+        <div class="grid-2">
+            <div class="admin-card">
+                <h4>Division A: Women's Islamic Educational Institution</h4>
+                <p>This division would continue and strengthen the existing madrasa programmes, providing structured Islamic education, Qur'an studies, memorisation programmes, Shariah studies and character development for girls and women.</p>
+            </div>
+            <div class="admin-card">
+                <h4>Division B: Women's Development Centre</h4>
+                <p>This division would focus on the broader spiritual, educational, psychological, social and family-related needs of women. Subject to the availability of qualified personnel and appropriate resources, proposed services include guidance for challenges encountered in personal, family and social lives.</p>
+            </div>
+        </div>
+
+        <p style="margin-top: 2rem;">To implement these programmes effectively, a magnificent building complex is required. Therefore, our administration is making arrangements to purchase five adjoining plots of land, comprising a total of <strong>52 perches, located on Dematagoda Road, Colombo 09</strong>. An advance payment has already been made towards the purchase.</p>
+
+        <p>The proposed developments for the new complex include:</p>
+        <ul class="custom-list">
+            <li>A spacious educational institution with the capacity to accommodate approximately 1,000 female students.</li>
+            <li>Specialised Islamic academic programmes, including Al-Hafizah, Al-Alimah, Al-Qari'ah, Al-Muqri'ah, and Al-Muballighah.</li>
+            <li>A dedicated educational division for visually impaired students.</li>
+            <li>A computer education centre, providing digital literacy and computer skills to women and mothers.</li>
+            <li><strong>The 15 proposed facilities:</strong> Dawratul Hadith Department, advanced Qira'ah/Ijazah, Muballighah Course, Mu'allimahs training, handicraft/sewing, sports facilities, First Aid Room, Science Lab, Computer Lab, career guidance, Tarbiyah/Bayan sessions, and a Guidance & Counselling Centre.</li>
+        </ul>
+
+        <h3 style="margin-top: 3rem;">Registration and Legal Ownership</h3>
+        <p>The land, buildings, and all movable and immovable assets of the institution will subsequently be registered under a <strong>Public Trust</strong>, in accordance with the applicable laws and regulations of Sri Lanka. Under no circumstances will the property or assets of the institution be registered in the name of an individual as personal property.</p>
+    </section>
+
+    <!-- NISWAAN NETWORK -->
+    <section id="niswaan" class="section-container">
+        <h2 class="section-title">The NISWAAN Network</h2>
+        <p><strong>NISWAAN – National Islamic Secretariat for Women's Affairs and Networking</strong> will function as a dedicated platform for addressing the religious, educational, psychological, family-related and socioeconomic needs of Muslim women throughout Sri Lanka. Its proposed services include:</p>
+
+        <div class="grid-2" style="margin-top: 2rem;">
+            <div class="admin-card"><h4>Ask Muallimah (24-Hour Helpline)</h4><p>A round-the-clock service where women can seek Islamic guidance from qualified female scholars.</p></div>
+            <div class="admin-card"><h4>Premarital & Family Life Guidance</h4><p>Structured courses for young women preparing for marriage, covering marital responsibilities, communication, and family relationships.</p></div>
+            <div class="admin-card"><h4>Women Entrepreneurs & Self-Employment</h4><p>Specialised training to strengthen practical business skills, and vocational guidance for widows and women in need.</p></div>
+            <div class="admin-card"><h4>Family Psychology & Parenting</h4><p>Workshops addressing emotional wellbeing, conflict resolution, and structured courses for mothers in child-rearing.</p></div>
+            <div class="admin-card"><h4>Love and Life Guidance</h4><p>Guidance for unmarried young women addressing emotional relationships, responsible decision-making, and future family life.</p></div>
+            <div class="admin-card"><h4>Drug Awareness Programmes</h4><p>Educational initiatives designed to raise awareness of substance abuse and preventive strategies.</p></div>
+            <div class="admin-card"><h4>Women's Fitness & Professional Dev.</h4><p>A dedicated fitness facility alongside specialised training for female professionals (teachers, lawyers, doctors, etc.).</p></div>
+            <div class="admin-card"><h4>National Niswaan Network</h4><p>Connecting women's madrasas, voluntary organisations, Alimahs/Hafizahs, and female professionals to share resources and coordinate efforts.</p></div>
+        </div>
+    </section>
+
+    <!-- FINANCIALS & ADMINISTRATION -->
+    <section id="financials" class="section-container">
+        <h2 class="section-title">Financials & Management</h2>
+        
+        <h3>College Financial Information (Operating)</h3>
+        <p>Our Madrasah does not depend on donations or public fundraising to meet its regular operating expenses. For the past 18 years, expenses have primarily been met through monthly student fees. Whenever there is a shortfall, the administration itself covers the deficit. Monthly expenses include approximately:</p>
+        <ul class="custom-list">
+            <li>Building rent: Rs. 180,000</li>
+            <li>Salaries for 42 lecturers and staff: approx. Rs. 1 million</li>
+            <li>Water, electricity, and other operational expenses.</li>
+        </ul>
+
+        <h3 style="margin-top: 3rem;">Land Acquisition Financial Details</h3>
+        <p>The price of the land is LKR 3.5 million per perch. Total purchase price for the entire property is <strong>LKR 182 million</strong>.</p>
+        <table class="data-table">
+            <tr><th>Financial Item</th><th>Amount (LKR)</th></tr>
+            <tr><td>Total Cost of Land</td><td>194,410,000.00</td></tr>
+            <tr><td>Advance Paid</td><td>51,825,000.00</td></tr>
+            <tr><td>Balance to be Settled</td><td>142,585,000.00</td></tr>
+            <tr><td>Additional Borrowing, Stamp Duty, etc.</td><td>37,900,000.00</td></tr>
+            <tr><td>Sub Total</td><td>180,485,000.00</td></tr>
+            <tr><td>Confirmed Donation</td><td>24,000,000.00</td></tr>
+            <tr><td><strong>Revised Total Balance to be Settled</strong></td><td><strong>156,485,000.00</strong></td></tr>
+        </table>
+        <p><strong>Building Complex:</strong> Total cost is approx. <strong>LKR 700 million</strong>. Estimated cost for the first phase is approx. <strong>LKR 300 million</strong>.</p>
+
+        <h2 class="section-title" style="margin-top: 4rem;">Management Committee</h2>
+        <div class="admin-grid">
+            <div class="admin-card"><h4>Founder & Chief Advisor</h4><p>Ash-Shaikh M. Salman Thaha Al-Tablighi</p></div>
+            <div class="admin-card"><h4>President</h4><p>Ash-Shaikh M. Ramzi Farooq Al-Rahmani</p></div>
+            <div class="admin-card"><h4>Secretary</h4><p>Ash-Shaikh Mufti M. Fahim Haneefa Al-Inami</p></div>
+            <div class="admin-card"><h4>Treasurer</h4><p>Al-Haj M. Ramzeen Uwais</p></div>
+            <div class="admin-card" style="grid-column: span 2;">
+                <h4>Committee Members</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <p>Al-Haj M. Rikkaz Mashood</p>
+                    <p>Al-Haj M. Abdul Rahman Noohu</p>
+                    <p>Al-Haj M. Ayyob Sulthan</p>
+                    <p>Al-Haj M. Fazeel Fawmy</p>
+                    <p>Al-Haj M. Muhiyyadeen</p>
+                    <p>Al-Haj M. Fazil Haneefa</p>
+                    <p>Al-Haj M. Abdul Rahman Mulaffer</p>
+                </div>
+                <p style="margin-top: 1rem; font-size: 0.95rem;">In addition to the above, the institution is managed by a dedicated administrative committee consisting of a further six members.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- DONATION -->
+    <section class="donation-section" id="donate">
+        <h2>Join Hands in This Noble Mission</h2>
+        <p>We warmly invite you to become a part of this noble and rewarding mission. You may contribute towards the purchase of the land by sponsoring one perch, half a perch, a quarter perch, or any amount within your means, and dedicate it as Sadaqah Jariyah (an ongoing charity) in the name of your beloved parents who have passed away.</p>
+        <p>May Allah accept our efforts and never allow our sincere contributions to this noble cause to go to waste. Your continued and wholehearted support is greatly needed for the successful completion of this project.</p>
+        
+        <div class="quran-quote">
+            "The example of those who spend their wealth in the way of Allah is like a grain that produces seven ears; in every ear are a hundred grains. And Allah multiplies for whom He wills. And Allah is All-Encompassing, All-Knowing."
+            <span>(Surah Al-Baqarah 2:261)</span>
+        </div>
+
+        <p>Therefore, let us give generously from what Allah has blessed us with, and let us also dedicate our contributions as Sadaqah Jariyah in the names of our beloved mothers and fathers who brought us into this world.</p>
+        <p>May Allah accept our contributions, bless our families, protect our children, and place barakah in our lives and our future. Ameen, Ameen, Ya Rabbal 'Alameen.</p>
+
+        <div class="bank-section-wrapper">
+            <h3 class="bank-title">Account Details</h3>
+            <div class="bank-grid">
+                <div class="bank-card">
+                    <div class="bank-card-header">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <h4>Amara Bank</h4>
+                    </div>
+                    <div class="bank-card-body">
+                        <div class="bank-row">
+                            <span class="bank-label">A/C Name</span>
+                            <span class="bank-value">Dharun Niswan</span>
+                        </div>
+                        <div class="bank-row">
+                            <span class="bank-label">Branch</span>
+                            <span class="bank-value">Pettah Branch</span>
+                        </div>
+                        <div class="account-number-box">
+                            <span>A/C NO</span>
+                            <strong>010-0562398-001</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bank-card">
+                    <div class="bank-card-header">
+                        <i class="fa-solid fa-globe"></i>
+                        <h4>MCB Bank Ltd.</h4>
+                    </div>
+                    <div class="bank-card-body">
+                        <div class="bank-row">
+                            <span class="bank-label">A/C Name</span>
+                            <span class="bank-value">Dharun Niswan PAS</span>
+                        </div>
+                        <div class="bank-row">
+                            <span class="bank-label">Swift Code</span>
+                            <span class="bank-value">MUCBLKLC</span>
+                        </div>
+                        <div class="bank-row">
+                            <span class="bank-label">Corr. Bank</span>
+                            <span class="bank-value">JP Morgan USA</span>
+                        </div>
+                        <div class="account-number-box">
+                            <span>A/C NO</span>
+                            <strong>004021015188</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Contact Number in Donation Section -->
+        <div class="contact-box">
+            <i class="fa-solid fa-phone-volume"></i> Contact Us: +94 77 554 1238
+        </div>
+
+    </section>
+
+    <footer>
+        <h3></h3>
+        <p style="margin-top: 1rem; font-size: 1.1rem;">
+            
+        </p>
+        <p style="margin-top: 0.5rem;"></p>
+    </footer>
+
+</body>
+</html>

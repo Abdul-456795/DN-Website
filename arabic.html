@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>كلية دار النسوان العربية | الأمس واليوم وغداً</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-dark: #1B5E20;
+            --primary-green: #2E7D32;
+            --accent-green: #4CAF50;
+            --bg-light: #E8F5E9;
+            --text-dark: #111111;
+            --text-gray: #222222;
+            --border-color: #DCE8DE;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        html, body {
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Amiri', 'Traditional Arabic', serif !important;
+            color: var(--text-dark);
+            line-height: 2.1;
+            position: relative;
+            background-color: #f4f9f4;
+            direction: rtl;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: url('background.jpg'); 
+            background-size: cover; 
+            background-position: center top; 
+            background-repeat: no-repeat;
+            opacity: 0.35; 
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Amiri', serif;
+            color: var(--text-dark); 
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: right;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.9); 
+        }
+
+        p, li, span, td, th, div {
+            font-family: 'Amiri', serif;
+            text-align: right;
+            direction: rtl;
+            font-size: 1.45rem !important; 
+            word-wrap: break-word; 
+            text-shadow: 1px 1px 3px rgba(255,255,255,0.9);
+        }
+
+        p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        nav {
+            background-color: rgba(255, 255, 255, 0.95); 
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo { display: flex; align-items: center; gap: 15px; }
+        .logo-text { font-size: 2rem; font-weight: 700; color: var(--text-dark); text-shadow: none; }
+        
+        .nav-right { display: flex; align-items: center; gap: 2rem; }
+        .nav-links { display: flex; gap: 1.2rem; }
+        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 700; font-size: 1.2rem !important; transition: color 0.3s; text-shadow: none; }
+        .nav-links a:hover { color: var(--primary-green); }
+
+        .lang-switch { display: flex; gap: 5px; background: var(--bg-light); padding: 4px; border-radius: 20px; border: 1px solid var(--border-color); }
+        .lang-btn { text-decoration: none; padding: 5px 15px; border-radius: 15px; font-weight: 700; background: var(--primary-green); color: white; font-family: sans-serif; font-size: 0.95rem !important; direction: ltr; text-shadow: none; }
+
+        /* Contact Info in Nav */
+        .nav-contact { display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--primary-dark); font-size: 1.1rem !important; text-shadow: none; direction: ltr; }
+        .nav-contact i { color: var(--accent-green); font-size: 1.2rem; }
+        @media (max-width: 992px) { .nav-contact { display: none; } }
+
+        .hero {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(8px);
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            margin: 7rem auto 2rem auto;
+            max-width: 90%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-logo {
+            max-height: 140px;
+            width: auto;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.1));
+        }
+
+        .hero h1 { font-size: 3.8rem !important; margin-bottom: 0.5rem; text-align: center; }
+        .hero .subtitle { font-size: 2rem !important; color: var(--primary-green); letter-spacing: 2px; margin-bottom: 2.5rem; text-align: center; }
+        .bismillah { background-color: rgba(255, 255, 255, 0.95); padding: 1rem 2.5rem; border-radius: 50px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); color: var(--text-dark); font-weight: 700; font-size: 1.6rem !important; border: 1px solid var(--primary-green); text-align: center; display: inline-block; }
+
+        .section-container { max-width: 1100px; margin: 3rem auto; padding: 4rem 3rem; background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.6); }
+        @media (max-width: 768px) { 
+            .section-container { padding: 2rem 1.5rem; margin: 2rem 1rem; } 
+            .hero { padding: 6rem 1rem 3rem; margin: 6rem 1rem 2rem 1rem; }
+            .hero-logo { max-height: 90px; }
+        }
+
+        .section-title { text-align: center !important; font-size: 3rem !important; margin-bottom: 3rem; position: relative; color: var(--text-dark); }
+        .section-title::after { content: ''; display: block; width: 80px; height: 4px; background-color: var(--primary-green); margin: 1rem auto 0; border-radius: 2px; }
+
+        .highlight-box { background-color: rgba(232, 245, 233, 0.95); border-right: 6px solid var(--primary-green); padding: 2rem; border-radius: 8px 0 0 8px; margin: 2rem 0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .highlight-box p { margin: 0; color: var(--text-dark); font-weight: 700; font-size: 1.5rem !important; text-align: center !important; text-shadow: none; }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .custom-list { list-style: none; padding: 0; }
+        .custom-list li { position: relative; padding-right: 2.5rem; padding-left: 0; margin-bottom: 1rem; color: var(--text-gray); }
+        .custom-list li::before { content: '\f00c'; font-family: 'FontAwesome'; position: absolute; right: 0; top: 10px; color: var(--primary-dark); }
+
+        .data-table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: #ffffff; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden; }
+        .data-table th, .data-table td { padding: 1.2rem; text-align: right; border-bottom: 1px solid var(--border-color); text-shadow: none; }
+        .data-table th { background-color: var(--text-dark); color: #fff; font-weight: 700; font-size: 1.4rem !important; }
+
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin: 3rem 0; }
+        .stat-card { background: #ffffff; padding: 2.5rem 1.5rem; border-radius: 12px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center !important; border: 1px solid var(--border-color); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .stat-number { font-size: 3.8rem !important; font-weight: 700; color: var(--primary-green); font-family: 'Amiri', serif; line-height: 1.1; margin-bottom: 0.5rem; text-align: center !important; direction: ltr !important; text-shadow: none; }
+        .stat-label { font-weight: 700; color: var(--text-dark); font-size: 1.35rem !important; line-height: 1.5; text-align: center !important; text-shadow: none; }
+
+        .admin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .admin-card { background: #ffffff; padding: 2rem; border-radius: 10px; border-right: 4px solid var(--primary-green); border-left: none; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .admin-card h4 { color: var(--text-dark); font-size: 1.5rem !important; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; text-shadow: none; }
+        .admin-card p { text-shadow: none; }
+
+        .donation-section { background: linear-gradient(135deg, rgba(27, 94, 32, 0.95) 0%, rgba(46, 125, 50, 0.95) 100%); color: #fff; padding: 5rem 3rem; margin: 3rem auto; max-width: 1100px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .donation-section h2 { color: #fff; font-size: 2.8rem !important; margin-bottom: 2rem; text-align: center !important; text-shadow: none; }
+        .donation-section p { color: #E8F5E9; max-width: 900px; margin: 0 auto 1.5rem auto; text-align: center !important; font-size: 1.45rem !important; text-shadow: none; }
+        
+        .quran-quote { font-size: 2rem !important; color: #fff; margin: 3rem auto; max-width: 800px; padding: 2rem; border-top: 1px solid rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.2); text-align: center !important; line-height: 2; text-shadow: none; }
+        .quran-quote span { display: block; font-family: sans-serif; font-size: 1.1rem !important; color: var(--accent-green); margin-top: 1rem; font-weight: 700; text-align: center !important; }
+
+        /* Bank Details Section */
+        .bank-section-wrapper { margin-top: 4rem; background: rgba(0, 0, 0, 0.2); padding: 3rem 2rem; border-radius: 20px; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .bank-title { text-align: center !important; color: #fff; font-size: 2.2rem !important; margin-bottom: 2rem; text-shadow: none; }
+        .bank-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .bank-card { background: #ffffff; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.2); transition: transform 0.3s ease; }
+        .bank-card:hover { transform: translateY(-5px); }
+        .bank-card-header { background: var(--primary-dark); color: #fff; padding: 1.5rem; text-align: center !important; border-bottom: 4px solid var(--accent-green); }
+        .bank-card-header i { font-size: 2rem; margin-bottom: 0.5rem; color: var(--accent-green); }
+        .bank-card-header h4 { color: #fff; margin: 0; font-size: 1.5rem !important; text-shadow: none; text-align: center !important; }
+        .bank-card-body { padding: 2rem; }
+        .bank-row { display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px dashed #ddd; }
+        .bank-row:last-child { border-bottom: none; margin-bottom: 0; }
+        .bank-label { font-weight: 700; color: var(--text-gray); font-size: 1.15rem !important; text-shadow: none; }
+        .bank-value { font-weight: 700; color: var(--text-dark); font-size: 1.25rem !important; text-align: left !important; text-shadow: none; direction: ltr; }
+        .account-number-box { background: var(--bg-light); padding: 1rem; border-radius: 8px; text-align: center !important; margin-top: 1rem; border: 1px solid var(--primary-green); }
+        .account-number-box span { display: block; font-size: 1.05rem !important; color: var(--text-gray); font-weight: 700; margin-bottom: 0.3rem; text-shadow: none; text-align: center !important; }
+        .account-number-box strong { font-family: 'Courier New', Courier, monospace; font-size: 1.5rem !important; color: var(--primary-dark); letter-spacing: 2px; user-select: all; text-shadow: none; display: block; text-align: center !important; direction: ltr; }
+
+        /* Contact Box in Donation */
+        .contact-box {
+            margin-top: 3rem;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 1.5rem;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.5rem !important;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: none;
+            direction: ltr;
+        }
+        .contact-box i { color: var(--accent-green); font-size: 1.8rem; }
+
+        /* Footer (Simplified) */
+        footer { background-color: #111; color: #fff; text-align: center; padding: 2rem; margin-top: 4rem;}
+        footer h3 { color: #fff; font-size: 1.7rem !important; text-align: center !important; text-shadow: none; margin: 0;}
+
+        @media (max-width: 992px) {
+            .grid-2 { grid-template-columns: 1fr; gap: 2rem; }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.8rem !important; }
+            .hero .subtitle { font-size: 1.5rem !important; }
+            .logo-text { font-size: 1.6rem !important; }
+            .bank-grid { grid-template-columns: 1fr; }
+            .bank-row { flex-direction: column; text-align: center !important; }
+            .bank-label, .bank-value { text-align: center !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <div class="logo-text">دار النسوان</div>
+        </div>
+        
+        <div class="nav-right">
+            <div class="nav-links">
+                <a href="#history">التاريخ</a>
+                <a href="#origin">النشأة</a>
+                <a href="#location">الموقع</a>
+                <a href="#academics">الأكاديمية</a>
+                <a href="#achievements">الإنجازات</a>
+                <a href="#future">الخطط المستقبلية</a>
+                <a href="#niswaan">شبكة نسوان</a>
+                <a href="#donate">تبرع</a>
+            </div>
+            
+            <!-- FIXED PHONE NUMBER -->
+            <div class="nav-contact">
+                <i class="fa-solid fa-phone"></i> <span dir="ltr" style="unicode-bidi: isolate;">&lrm;+94 77 554 1238</span>
+            </div>
+            
+            <div class="lang-switch">
+                <a href="index.html" class="lang-btn">English</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <img src="logo.png" alt="شعار دار النسوان" class="hero-logo" onerror="this.style.display='none'">
+        <h1>كلية دار النسوان العربية</h1>
+        <p class="subtitle">الأمس واليوم وغداً</p>
+        <div class="bismillah">بسم الله الرحمن الرحيم</div>
+    </header>
+
+    <section id="history" class="section-container">
+        <h2 class="section-title">تراثنا ومقدمة</h2>
+        <p>يسعدنا كثيراً أن ترحب إدارة دار النسوان بكم جميعاً في هذا المساء الهادئ. والحمد لله.</p>
+        <p>في تاريخ سريلانكا، تمتلك المدارس العربية إرثاً يمتد لأكثر من 150 عاماً. تم تسجيل أول كلية عربية في سريلانكا تأسست عام 1870 في جالي، والمعروفة باسم كلية المكية العربية. ومع ذلك، هناك رواية تاريخية تشير إلى أن كلية المصطفوية أهل السنة العربية تأسست في نفس المنطقة في وقت مبكر من عام 1867.</p>
+        <p>في حين أن تعليم الرجال ليصبحوا علماء هو أمر مهم، فإن إحداث التغييرات المرجوة في النساء والأسر من خلال العلماء الرجال وحدهم يمكن أن يكون صعباً. يتطلب التنمية الاجتماعية المستدامة وصول المعرفة الإسلامية إلى النساء أيضاً، لتمكينهن من المساهمة بشكل هادف في تربية الأطفال، وتقوية الأسر، وتنمية المجتمع.</p>
+        
+        <div class="highlight-box">
+            <p>وانطلاقاً من إدراك هذه الحاجة، تم تأسيس أول كلية عربية للنساء في سريلانكا في كال-إيليا عام 1959. وقد نشأت كلية دار النسوان العربية للنساء في نفس الروح، بالتزامها بتزويد النساء بالمعرفة الإسلامية السليمة وتمكينهن من أداء أدوارهن الحيوية داخل أسرهن ومجتمعهن.</p>
+        </div>
+
+        <p><strong>أهمية تعليم المرأة:</strong> الأم هي المدرسة الأولى للطفل والمعلمة الأولى خلال سنوات التكوين في حياته. إن معرفة الأم وحكمتها وقيمها وشخصيتها لها تأثير عميق على تنمية أطفالها. وكما يقول المثل التاميلي الشهير: "كما يكون الخيط، يكون الساري؛ وكما تكون الأم، يكون الطفل". لذلك، فإن توفير وصول المرأة إلى تعليم جيد، لا سيما التعليم الإسلامي، أمر ضروري لبناء أسر واعية ومجتمع مسؤول أخلاقياً.</p>
+    </section>
+
+    <section id="origin" class="section-container">
+        <h2 class="section-title">النشأة والتأسيس ومسيرتنا</h2>
+        <p>وبناءً على هذا الهدف تحديداً، تم إدراك الحاجة في أوائل عام 2008 إلى مدرسة عربية في كولومبو مخصصة لتوفير التعليم الديني الإسلامي للنساء. في ذلك الوقت، كان هناك نقص كبير في المؤسسة المجهزة تجهيزاً جيداً حيث يمكن للفتيات والطالبات والشابات والنساء المتزوجات تلقي تعليم ديني سليم ومنهجي.</p>
+        <p>في 15 يناير 2008، عُقد اجتماع تشاوري بقيادة الشيخ م. سلمان طه من مركز كولومبو، والحاج م. رياض إسماعيل، والحاج م. ريكاز مشهود. بعد مقابلة القبول، تم اختيار 54 طالبة للدفعة الافتتاحية.</p>
+        <p>أقيم حفل الافتتاح الرسمي لكلية دار النسوان العربية للبنات في 24 مارس 2008 في قاعة مانيل للاستقبال، طريق باسلاين، كولومبو 09. وبفضل الله، استمر الشيخ الحافظ مفتي م.ح.م. فهيم حنيفة الإنعامي، مع زوجته، في خدمة المؤسسة بتفانٍ والتزام منذ نشأتها وحتى يومنا هذا.</p>
+        <p><strong>مسيرة الكلية:</strong> نظراً لعدم وجود مبنى دائم خاص بها، عملت الكلية من عدة مواقع على مر السنين. عملت في البداية في شارع باسلاين، ثم انتقلت لاحقاً إلى شارع ماليجاكندا، وتعمل حالياً في شارع ديماتاجودا. وعلى الرغم من هذه التحديات، وبفضل الله اللامحدود، واصلت دار النسوان التطور لتصبح واحدة من المؤسسات الرائدة في سريلانكا المخصصة لتعليم النساء الإسلامي.</p>
+    </section>
+
+    <section id="location" class="section-container">
+        <h2 class="section-title">لماذا يعتبر الموقع في ديماتاجودا مهماً؟</h2>
+        <p>تقع الكلية في منطقة مكتظة بالسكان ومزدحمة للغاية. لذلك، اقترح الكثيرون أنه يمكن نقل المؤسسة إلى بيئة أكبر وأكثر اتساعاً وهدوءاً.</p>
+        <p>ومع ذلك، ترى الإدارة أن ديماتاجودا موقع مناسب للغاية لمدرسة نسائية في وسط كولومبو، لعدة أسباب مهمة.</p>
+        <p>المنطقة هي في الغالب مجتمع سكني مسلم 100٪، مما يوفر بيئة مألوفة ومريحة لطلابنا. كما أنه يمكّن فتياتنا ونساءنا من السفر من وإلى المؤسسة بالحجاب دون إزعاج لا داعي له، مع توفير شعور بالأمان والسلامة أثناء متابعة تعليمهن الديني.</p>
+        <p>لهذه الأسباب، تعتقد الإدارة اعتقاداً راسخاً أن هذا الموقع مناسب بشكل خاص لمؤسسة تعليمية إسلامية للنساء تخدم المجتمع المسلم في وسط كولومبو. وبناءً على هذه الرؤية، وبفضل الله، استمرت المؤسسة في خدمة المجتمع في هذه المنطقة ذاتها لما يقرب من 18 عاماً، ونمت باطراد وساهمت في التنمية الدينية والتعليمية للنساء المسلمات.</p>
+    </section>
+
+    <section id="academics" class="section-container">
+        <h2 class="section-title">البرامج الأكاديمية والتسجيل</h2>
+        <p>تقدم دار النسوان حالياً البرامج التعليمية التالية لتلبية احتياجات التعلم المتنوعة للفتيات والنساء:</p>
+        <ul class="custom-list">
+            <li><strong>1. برنامج العالمية المولوية الشرعية</strong> - برنامج لمدة خمس سنوات يجمع بين الدراسات الإسلامية والتعليم العام حتى المستوى العادي.</li>
+            <li><strong>2. برنامج الحافظة لتحفيظ القرآن الكريم</strong> - برنامج لمدة أربع سنوات يجمع بين تحفيظ القرآن والتعليم العام حتى المستوى العادي.</li>
+            <li><strong>3. مدرسة تلاوة القرآن (مكتب)</strong> - برنامج لمدة ثلاث سنوات يقام بعد ساعات الدراسة المنتظمة.</li>
+            <li><strong>4. برنامج الحافظة</strong> - دورة تحفيظ القرآن لمدة ست سنوات تقام بعد ساعات الدراسة المنتظمة.</li>
+            <li><strong>5. برنامج التربية الأسبوعي</strong> - برنامج لمدة سنة ونصف مصمم للنساء المتزوجات وغير المتزوجات، ويركز على التعليم الإسلامي والتنمية الشخصية والتربية الأخلاقية.</li>
+        </ul>
+
+        <h3 style="margin-top: 3rem; text-align: center;">الطلاب المسجلون حالياً</h3>
+        <p style="text-align: center;">في الوقت الحاضر، يتلقى العدد التالي من الطلاب التعليم في الأقسام المذكورة أعلاه (ما يقرب من 500 طالب ومستفيد يومياً):</p>
+        <div class="stats-grid">
+            <div class="stat-card"><div class="stat-number">90</div><div class="stat-label">العالمية مولوية الشريعة</div></div>
+            <div class="stat-card"><div class="stat-number">60</div><div class="stat-label">تحفيظ القرآن الكريم</div></div>
+            <div class="stat-card"><div class="stat-number">140</div><div class="stat-label">تلاوة القرآن (مكتب)</div></div>
+            <div class="stat-card"><div class="stat-number">44</div><div class="stat-label">دورة الحافظة</div></div>
+            <div class="stat-card"><div class="stat-number">70</div><div class="stat-label">دروس التربية الأسبوعية</div></div>
+        </div>
+
+        <h3 style="margin-top: 3rem; text-align: center;">الخريجون حتى الآن</h3>
+        <p style="text-align: center;">أكمل العدد التالي من الطلاب دوراتهم بنجاح وتخرجوا:</p>
+        <div class="stats-grid" style="margin-bottom: 0;">
+            <div class="stat-card"><div class="stat-number">170</div><div class="stat-label">العالمات المولويات</div></div>
+            <div class="stat-card"><div class="stat-number">104</div><div class="stat-label">الحافظات</div></div>
+            <div class="stat-card"><div class="stat-number">200</div><div class="stat-label">مكتب تلاوة القرآن</div></div>
+            <div class="stat-card"><div class="stat-number">44</div><div class="stat-label">قسم تحفيظ الحافظة</div></div>
+            <div class="stat-card"><div class="stat-number">296</div><div class="stat-label">دورة التربية الأسبوعية</div></div>
+        </div>
+        <div class="highlight-box" style="text-align: center; margin-top: 2rem;">
+            <p>في المجموع، أكمل حوالي 814 طالباً دوراتهم بنجاح وتخرجوا من المؤسسة.</p>
+        </div>
+    </section>
+
+    <section id="achievements" class="section-container">
+        <h2 class="section-title">الإنجازات والتقدم</h2>
+        <p>تأسست المدرسة كمؤسسة غير داخلية، بهدف ضمان بقاء الطلاب تحت إشراف والديهم، خاصة خلال ساعات المساء.</p>
+        <p>بفضل الله، عملت دار النسوان على مدى السنوات الـ 18 الماضية كمؤسسة تعليمية غير ربحية موجهة للمجتمع بالكامل، مسترشدة بالإخلاص والتزامها بخدمة المجتمع بدلاً من السعي وراء مكاسب مادية.</p>
+        <p>ونتيجة لذلك، أثبتت المؤسسة نفسها كواحدة من المؤسسات التعليمية الإسلامية الرائدة للنساء في سريلانكا. يخدم العديد من خريجيها المجتمع الآن في مجموعة متنوعة من الأدوار المهمة، بما في ذلك:</p>
+        <ul class="custom-list">
+            <li><strong>المربيات الإسلاميات:</strong> يعملن كمعلمات في مختلف المؤسسات التعليمية الإسلامية.</li>
+            <li><strong>معلمات المدارس:</strong> يساهمن في التعليم الرسمي وتنمية الأطفال.</li>
+            <li><strong>المتفوقات في المسابقات:</strong> حصلن على مراكز ضمن أفضل ثلاثة في المسابقات الوطنية والدولية.</li>
+            <li><strong>الأمهات المسؤولات:</strong> يطبقن معرفتهن الإسلامية وقيمهن الأخلاقية لتربية الأطفال وتقوية أسرهن.</li>
+            <li><strong>معلمات المجتمع:</strong> إنشاء وإدارة مدارس للأطفال وتنظيم دروس إسلامية أسبوعية للنساء في مناطقهن.</li>
+        </ul>
+        <p>لن يكون من المبالغة القول إن هذه الإنجازات هي انعكاس للتضحيات والتفاني والجهود الصادقة التي بذلتها إدارة مدرسة النسوان على مر السنين. الحمد لله رب العالمين!</p>
+    </section>
+
+    <section id="future" class="section-container">
+        <h2 class="section-title">إعادة الهيكلة والحاجة إلى مبنى دائم</h2>
+        <p>تواجه النساء المسلمات في سريلانكا احتياجات روحية وتعليمية واجتماعية وأسرية متنوعة لم يتم تلبيتها بعد، ولا تزال خدمات الدعم المخصصة والتي يمكن الوصول إليها والمناسبة محدودة. واستجابةً لهذه الاحتياجات، تسعى إدارة دار النسوان إلى إعادة هيكلة المؤسسة القائمة وتطويرها وتوسيع رسالتها إلى ما هو أبعد من التعليم التقليدي في المدارس.</p>
+
+        <div class="highlight-box">
+            <p>وبموجب هذا النموذج المقترح، ستعمل المؤسسة من خلال قسمين متكاملين:</p>
+        </div>
+
+        <div class="grid-2">
+            <div class="admin-card">
+                <h4>القسم أ: مؤسسة تعليمية إسلامية للنساء</h4>
+                <p>سيواصل هذا القسم تعزيز برامج المدارس الحالية، وتوفير التعليم الإسلامي المنظم، ودراسات القرآن، وبرامج التحفيظ، والدراسات الشرعية، وتنمية الشخصية للفتيات والنساء.</p>
+            </div>
+            <div class="admin-card">
+                <h4>القسم ب: مركز تنمية المرأة</h4>
+                <p>سيركز هذا القسم على الاحتياجات الروحية والتعليمية والنفسية والاجتماعية والأسرية الأوسع للمرأة. ورهناً بتوافر الموظفين المؤهلين والموارد المناسبة، ستشمل الخدمات المقترحة التوجيه للتحديات التي تواجهها في الحياة الشخصية والأسرية والاجتماعية.</p>
+            </div>
+        </div>
+
+        <p style="margin-top: 2rem;">ولتنفيذ هذه البرامج بفعالية، يلزم وجود مجمع بناء ضخم. لذلك، تقوم إدارتنا بترتيبات لشراء خمس قطع أراضي متجاورة، تشكل ما مجموعه <strong>52 بيرشاً، تقع في شارع ديماتاجودا، كولومبو 09</strong>. وقد تم سداد دفعة مقدمة نحو الشراء.</p>
+
+        <p>تشمل التطورات المقترحة للمجمع الجديد ما يلي:</p>
+        <ul class="custom-list">
+            <li>مؤسسة تعليمية واسعة تتسع لحوالي 1000 طالبة.</li>
+            <li>برامج أكاديمية إسلامية متخصصة، تشمل الحافظة، والعالمية، والقارئة، والمقرئة، والمبلغة.</li>
+            <li>قسم تعليمي مخصص للطلاب المكفوفين.</li>
+            <li>مركز لتعليم الكمبيوتر، يوفر محو الأمية الرقمية ومهارات الكمبيوتر للنساء والأمهات.</li>
+            <li><strong>المرافق الـ 15 المقترحة:</strong> قسم دورة الحديث، القراءة والإجازة المتقدمة، دورة المبلغات، تدريب المعلمات، الحرف اليدوية/الخياطة، المرافق الرياضية، غرفة الإسعافات الأولية، مختبر العلوم، مختبر الكمبيوتر، التوجيه المهني، جلسات التربية والبيان، ومركز الإرشاد والتوجيه.</li>
+        </ul>
+
+        <h3 style="margin-top: 3rem;">التسجيل والملكية القانونية</h3>
+        <p>سيتم تسجيل الأرض والمباني وجميع الأصول المنقولة وغير المنقولة للمؤسسة لاحقاً بموجب <strong>صندوق استئماني عام (Public Trust)</strong>، وفقاً للقوانين واللوائح المعمول بها في سريلانكا. وتحت أي ظرف من الظروف لن يتم تسجيل ممتلكات أو أصول المؤسسة باسم فرد كملكية شخصية.</p>
+    </section>
+
+    <section id="niswaan" class="section-container">
+        <h2 class="section-title">شبكة نسوان (NISWAAN)</h2>
+        <p>ستعمل <strong>نسوان - الأمانة الوطنية الإسلامية لشؤون المرأة والتواصل</strong> كمنصة مخصصة لمعالجة الاحتياجات الدينية والتعليمية والنفسية والأسرية والاجتماعية والاقتصادية للنساء المسلمات في جميع أنحاء سريلانكا. وتشمل خدماتها المقترحة ما يلي:</p>
+
+        <div class="grid-2" style="margin-top: 2rem;">
+            <div class="admin-card"><h4>اسأل معلمة (خط ساخن 24 ساعة)</h4><p>خدمة على مدار الساعة يمكن للنساء من خلالها طلب التوجيه الإسلامي من عالمات مؤهلات.</p></div>
+            <div class="admin-card"><h4>إرشاد ما قبل الزواج والحياة الأسرية</h4><p>دورات منظمة للشابات المقبلات على الزواج، تغطي المسؤوليات الزوجية والتواصل والعلاقات الأسرية.</p></div>
+            <div class="admin-card"><h4>رائدات الأعمال والعمل الحر</h4><p>تدريب متخصص لتعزيز المهارات التجارية العملية، وتوجيه مهني للأرامل والنساء المحتاجات.</p></div>
+            <div class="admin-card"><h4>علم النفس الأسري والأبوة</h4><p>ورش عمل تتناول الرفاهية العاطفية وحل النزاعات، ودورات منظمة للأمهات في تربية الأطفال.</p></div>
+            <div class="admin-card"><h4>إرشاد الحب والحياة</h4><p>توجيه للشابات غير المتزوجات يتناول العلاقات العاطفية واتخاذ القرارات المسؤولة والحياة الأسرية المستقبلية.</p></div>
+            <div class="admin-card"><h4>برامج التوعية بالمخدرات</h4><p>مبادرات تعليمية تهدف إلى زيادة الوعي بإساءة استخدام المواد المخدرة واستراتيجيات الوقاية.</p></div>
+            <div class="admin-card"><h4>لياقة المرأة والتطوير المهني</h4><p>مرفق رياضي مخصص إلى جانب تدريب متخصص للمهنيات (معلمات، محاميات، طبيبات، إلخ).</p></div>
+            <div class="admin-card"><h4>شبكة نسوان الوطنية</h4><p>ربط مدارس النساء والمنظمات التطوعية والعالمات والحافظات والمهنيات لتبادل الموارد وتنسيق الجهود.</p></div>
+        </div>
+    </section>
+
+    <section id="financials" class="section-container">
+        <h2 class="section-title">المعلومات المالية والإدارة</h2>
+        
+        <h3>المعلومات المالية للكلية (التشغيلية)</h3>
+        <p>لا تعتمد مدرستنا على التبرعات أو جمع الأموال العامة لتغطية نفقات التشغيل العادية. على مدى السنوات الـ 18 الماضية، تمت تغطية النفقات بشكل أساسي من خلال الرسوم الشهرية للطلاب. كلما كان هناك عجز، تتحمل الإدارة نفسها العجز. تشمل النفقات الشهرية تقريباً:</p>
+        <ul class="custom-list">
+            <li>إيجار المبنى: 180,000 روبية</li>
+            <li>رواتب 42 محاضراً وموظفاً: حوالي مليون روبية</li>
+            <li>المياه والكهرباء والنفقات التشغيلية الأخرى.</li>
+        </ul>
+
+        <h3 style="margin-top: 3rem;">تفاصيل شراء الأرض مالياً</h3>
+        <p>سعر الأرض 3.5 مليون روبية للبيرش. سعر الشراء الإجمالي للعقار بأكمله هو <strong>182 مليون روبية</strong>.</p>
+        <table class="data-table">
+            <tr><th>البند المالي</th><th>المبلغ (روبية)</th></tr>
+            <tr><td>التكلفة الإجمالية للأرض</td><td>194,410,000.00</td></tr>
+            <tr><td>الدفعة المقدمة</td><td>51,825,000.00</td></tr>
+            <tr><td>الرصيد الواجب تسويته</td><td>142,585,000.00</td></tr>
+            <tr><td>الاقتراض الإضافي، رسوم الدمغة، إلخ.</td><td>37,900,000.00</td></tr>
+            <tr><td>المجموع الفرعي</td><td>180,485,000.00</td></tr>
+            <tr><td>التبرع المؤكد</td><td>24,000,000.00</td></tr>
+            <tr><td><strong>إجمالي الرصيد المنقح الواجب تسويته</strong></td><td><strong>156,485,000.00</strong></td></tr>
+        </table>
+        <p><strong>مجمع البناء:</strong> التكلفة الإجمالية حوالي <strong>700 مليون روبية</strong>. التكلفة المقدرة للمرحلة الأولى حوالي <strong>300 مليون روبية</strong>.</p>
+
+        <h2 class="section-title" style="margin-top: 4rem;">لجنة الإدارة</h2>
+        <div class="admin-grid">
+            <div class="admin-card"><h4>المؤسس والمستشار الرئيسي</h4><p>الشيخ م. سلمان طه التبليغي</p></div>
+            <div class="admin-card"><h4>الرئيس</h4><p>الشيخ م. رمزي فاروق الرحماني</p></div>
+            <div class="admin-card"><h4>الأمين</h4><p>الشيخ مفتي م.ح.م. فهيم حنيفة الإنعامي</p></div>
+            <div class="admin-card"><h4>أمين الصندوق</h4><p>الحاج م. رمزين أويس</p></div>
+            <div class="admin-card" style="grid-column: span 2;">
+                <h4>أعضاء اللجنة</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <p>الحاج م. ريكاز مشهود</p>
+                    <p>الحاج م. عبد الرحمن نوح</p>
+                    <p>الحاج م. أيوب سلطان</p>
+                    <p>الحاج م. فاضل فومي</p>
+                    <p>الحاج م. محيي الدين</p>
+                    <p>الحاج م. فاضل حنيفة</p>
+                    <p>الحاج م. عبد الرحمن ملافر</p>
+                </div>
+                <p style="margin-top: 1rem; font-size: 1.15rem !important;">بالإضافة إلى ما سبق، تدير المؤسسة لجنة إدارية متفانية تتكون من ستة أعضاء آخرين.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="donation-section" id="donate">
+        <h2>انضم إلينا في هذه المهمة النبيلة</h2>
+        <p>ندعوكم بحرارة لتكونوا جزءاً من هذه المهمة النبيلة والمجزية. يمكنكم المساهمة في شراء الأرض من خلال رعاية بيرش واحد، أو نصف بيرش، أو ربع بيرش، أو أي مبلغ في حدود إمكانياتكم، وتخصيصه كصدقة جارية باسم والديكم الأحباء الذين رحلوا.</p>
+        <p>نسأل الله أن يتقبل جهودنا وألا يضيع مساهماتنا الصادقة في هذه القضية النبيلة أبداً. هناك حاجة كبيرة لدعمكم المستمر والقلبي لإنجاح هذا المشروع.</p>
+        
+        <div class="quran-quote">
+            "مَّثَلُ الَّذِينَ يُنفِقُونَ أَمْوَالَهُمْ فِي سَبِيلِ اللَّهِ كَمَثَلِ حَبَّةٍ أَنبَتَتْ سَبْعَ سَنَابِلَ فِي كُلِّ سُنبُلَةٍ مِّائَةُ حَبَّةٍ ۗ وَاللَّهُ يُضَاعِفُ لِمَن يَشَاءُ ۗ وَاللَّهُ وَاسِعٌ عَلِيمٌ"
+            <span>(سورة البقرة 2:261)</span>
+        </div>
+
+        <p>لذلك، دعونا نتبرع بسخاء مما أنعم الله به علينا، ودعونا أيضاً نخصص مساهماتنا كصدقة جارية بأسماء أمهاتنا وآبائنا الأحباء الذين أتوا بنا إلى هذا العالم.</p>
+        <p>نسأل الله أن يتقبل مساهماتنا، ويبارك في عائلاتنا، ويحمي أطفالنا، ويضع البركة في حياتنا ومستقبلنا. آمين، آمين، يا رب العالمين.</p>
+
+        <div class="bank-section-wrapper">
+            <h3 class="bank-title">تفاصيل الحساب</h3>
+            <div class="bank-grid">
+                <div class="bank-card">
+                    <div class="bank-card-header">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <h4>بنك أمارا (Amara Bank)</h4>
+                    </div>
+                    <div class="bank-card-body">
+                        <div class="bank-row">
+                            <span class="bank-label">اسم الحساب</span>
+                            <span class="bank-value">Dharun Niswan</span>
+                        </div>
+                        <div class="bank-row">
+                            <span class="bank-label">الفرع</span>
+                            <span class="bank-value">Pettah Branch</span>
+                        </div>
+                        <div class="account-number-box">
+                            <span>رقم الحساب</span>
+                            <strong>010-0562398-001</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bank-card">
+                    <div class="bank-card-header">
+                        <i class="fa-solid fa-globe"></i>
+                        <h4>بنك MCB المحدود</h4>
+                    </div>
+                    <div class="bank-card-body">
+                        <div class="bank-row">
+                            <span class="bank-label">اسم الحساب</span>
+                            <span class="bank-value">Dharun Niswan PAS</span>
+                        </div>
+                        <div class="bank-row">
+                            <span class="bank-label">سويفت كود</span>
+                            <span class="bank-value">MUCBLKLC</span>
+                        </div>
+                        <div class="bank-row">
+                            <span class="bank-label">البنك المراسل</span>
+                            <span class="bank-value">JP Morgan USA</span>
+                        </div>
+                        <div class="account-number-box">
+                            <span>رقم الحساب</span>
+                            <strong>004021015188</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FIXED PHONE NUMBER IN DONATION BOX -->
+        <div class="contact-box">
+            <i class="fa-solid fa-phone-volume"></i> اتصل بنا: <span dir="ltr" style="unicode-bidi: isolate;">&lrm;+94 77 554 1238</span>
+        </div>
+
+    </section>
+
+    <footer>
+        <h3>كلية دار النسوان للبنات</h3>
+    </footer>
+
+</body>
+</html>
