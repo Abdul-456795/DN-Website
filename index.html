@@ -72,6 +72,7 @@
             text-shadow: 1px 1px 3px rgba(255,255,255,0.9);
         }
 
+        /* Navigation */
         nav {
             background-color: rgba(255, 255, 255, 0.95); 
             backdrop-filter: blur(10px);
@@ -89,10 +90,8 @@
         .logo { display: flex; align-items: center; gap: 15px; }
         .logo-text { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 800; color: var(--text-dark); text-shadow: none; }
         
+        /* Right side of nav */
         .nav-right { display: flex; align-items: center; gap: 2rem; }
-        .nav-links { display: flex; gap: 1.2rem; }
-        .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 700; font-size: 0.9rem; transition: color 0.3s; text-shadow: none; }
-        .nav-links a:hover { color: var(--primary-green); }
 
         .lang-switch { display: flex; gap: 5px; background: var(--bg-light); padding: 4px; border-radius: 20px; border: 1px solid var(--border-color); }
         .lang-btn { text-decoration: none; padding: 5px 15px; border-radius: 15px; font-weight: 700; background: var(--primary-green); color: white; font-family: 'Open Sans', sans-serif; font-size: 0.9rem; text-shadow: none; }
@@ -100,7 +99,11 @@
         /* Contact Info in Nav */
         .nav-contact { display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--primary-dark); font-size: 1rem; text-shadow: none; }
         .nav-contact i { color: var(--accent-green); }
-        @media (max-width: 992px) { .nav-contact { display: none; } }
+        
+        @media (max-width: 768px) { 
+            .nav-contact { display: none; } 
+            .logo-text { font-size: 1.2rem; }
+        }
 
         .hero {
             background: rgba(255, 255, 255, 0.85);
@@ -186,32 +189,17 @@
         .account-number-box strong { font-family: 'Courier New', Courier, monospace; font-size: 1.4rem; color: var(--primary-dark); letter-spacing: 2px; user-select: all; text-shadow: none; }
 
         /* Contact Box in Donation */
-        .contact-box {
-            margin-top: 3rem;
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 1.5rem;
-            border-radius: 10px;
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #fff;
-            text-shadow: none;
-        }
+        .contact-box { margin-top: 3rem; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3); padding: 1.5rem; border-radius: 10px; display: inline-flex; align-items: center; gap: 15px; font-size: 1.3rem; font-weight: 700; color: #fff; text-shadow: none; }
         .contact-box i { color: var(--accent-green); font-size: 1.8rem; }
 
-        footer { background-color: rgba(17, 17, 17, 0.95); color: #aaa; text-align: center; padding: 3rem 2rem; margin-top: 4rem;}
-        footer h3 { color: #fff; font-size: 1.5rem; text-align: center; text-shadow: none; }
-        footer p { text-align: center; text-shadow: none; }
+        /* Footer (Simplified) */
+        footer { background-color: #111; color: #fff; text-align: center; padding: 2rem; margin-top: 4rem;}
+        footer h3 { color: #fff; font-size: 1.5rem; text-align: center; text-shadow: none; margin: 0;}
 
         @media (max-width: 992px) {
             .grid-2 { grid-template-columns: 1fr; gap: 2rem; }
-            .nav-links { display: none; }
             .hero h1 { font-size: 2.5rem; }
             .hero .subtitle { font-size: 1.1rem; }
-            .logo-text { font-size: 1.2rem; }
             .bank-grid { grid-template-columns: 1fr; }
         }
     </style>
@@ -224,17 +212,6 @@
         </div>
         
         <div class="nav-right">
-            <div class="nav-links">
-                <a href="#history">History</a>
-                <a href="#origin">Origin</a>
-                <a href="#location">Location</a>
-                <a href="#academics">Academics</a>
-                <a href="#achievements">Achievements</a>
-                <a href="#future">Future Plans</a>
-                <a href="#niswaan">NISWAAN Network</a>
-                <a href="#donate">Donate</a>
-            </div>
-            
             <!-- Contact Number in Navbar -->
             <div class="nav-contact">
                 <i class="fa-solid fa-phone"></i> +94 77 554 1238
@@ -253,7 +230,6 @@
         <div class="bismillah">In the Name of Allah, the Most Gracious, the Most Merciful</div>
     </header>
 
-    <!-- HISTORY & INTRODUCTION -->
     <section id="history" class="section-container">
         <h2 class="section-title">Our Heritage & Introduction</h2>
         <p>It is with immense pleasure that the management of Darun Niswan welcomes you all this peaceful evening. All praise is due to Allah. Alhamdulillah.</p>
@@ -267,7 +243,6 @@
         <p><strong>The Importance of Women's Education:</strong> A mother is a child's first school and the first teacher during the formative years of life. The knowledge, wisdom, values and character of a mother have a profound influence on the development of her children. As the well-known Tamil proverb states, "As the thread, so the sari; as the mother, so the child." Therefore, providing women with access to quality education, particularly Islamic education, is essential for building knowledgeable families and a morally responsible society.</p>
     </section>
 
-    <!-- ORIGIN & JOURNEY -->
     <section id="origin" class="section-container">
         <h2 class="section-title">Origin, Establishment & Our Journey</h2>
         <p>With this very objective in mind, in early 2008, the need for an Arabic Madrasah in Colombo dedicated to providing Islamic religious education for women was recognized. At that time, there was a significant lack of a properly equipped institution where girls, school-going students, young women, and married women could receive sound and systematic religious education.</p>
@@ -276,7 +251,6 @@
         <p><strong>The College's Journey:</strong> Due to the absence of a permanent building of its own, the college operated from several locations over the years. It initially functioned on Baseline Road, subsequently moved to Maligakanda Road, and is currently operating on Dematagoda Road. Despite these challenges, and by the immense grace of Allah, Darun Niswan has continued to develop into one of Sri Lanka's leading institutions dedicated to women's Islamic education.</p>
     </section>
 
-    <!-- LOCATION IMPORTANCE -->
     <section id="location" class="section-container">
         <h2 class="section-title">Why is the Location in Dematagoda Important?</h2>
         <p>The college is situated in a densely populated and highly congested area. Therefore, many people have suggested that the institution could be relocated to a larger and more spacious, peaceful environment.</p>
@@ -285,7 +259,6 @@
         <p>For these reasons, the administration firmly believes that this location is particularly appropriate for a women’s Islamic educational institution serving the Muslim community in Central Colombo. Based on this vision, and by the grace of Allah, the institution has continued to serve the community in this very area for approximately 18 years, growing steadily and contributing to the religious and educational development of Muslim women.</p>
     </section>
 
-    <!-- ACADEMICS & ENROLLMENT -->
     <section id="academics" class="section-container">
         <h2 class="section-title">Academic Programmes & Enrollment</h2>
         <p>Darun Niswan currently offers the following educational programmes to meet the diverse learning needs of girls and women:</p>
@@ -321,7 +294,6 @@
         </div>
     </section>
 
-    <!-- ACHIEVEMENTS -->
     <section id="achievements" class="section-container">
         <h2 class="section-title">Achievements and Progress</h2>
         <p>The Madrasah was established as a non-residential institution, with the objective of ensuring that students remain under the supervision of their parents, particularly during the evening hours.</p>
@@ -337,7 +309,6 @@
         <p>It would not be an exaggeration to say that these achievements are a reflection of the sacrifices, dedication and sincere efforts made by the administration of Niswaan Madrasah over the years. Alhamdulillahi Rabbil 'Alameen!</p>
     </section>
 
-    <!-- FUTURE PLANS & RESTRUCTURING -->
     <section id="future" class="section-container">
         <h2 class="section-title">Restructuring & The Need for a Permanent Building</h2>
         <p>Muslim women in Sri Lanka face various unmet spiritual, educational, social and family-related needs for which dedicated, accessible and appropriate support services remain limited. In response to these unmet needs, the management of Darun Niswan is seeking to restructure and upgrade the existing institution and expand its mission beyond conventional madrasa education.</p>
@@ -372,7 +343,6 @@
         <p>The land, buildings, and all movable and immovable assets of the institution will subsequently be registered under a <strong>Public Trust</strong>, in accordance with the applicable laws and regulations of Sri Lanka. Under no circumstances will the property or assets of the institution be registered in the name of an individual as personal property.</p>
     </section>
 
-    <!-- NISWAAN NETWORK -->
     <section id="niswaan" class="section-container">
         <h2 class="section-title">The NISWAAN Network</h2>
         <p><strong>NISWAAN – National Islamic Secretariat for Women's Affairs and Networking</strong> will function as a dedicated platform for addressing the religious, educational, psychological, family-related and socioeconomic needs of Muslim women throughout Sri Lanka. Its proposed services include:</p>
@@ -389,7 +359,6 @@
         </div>
     </section>
 
-    <!-- FINANCIALS & ADMINISTRATION -->
     <section id="financials" class="section-container">
         <h2 class="section-title">Financials & Management</h2>
         
@@ -437,7 +406,6 @@
         </div>
     </section>
 
-    <!-- DONATION -->
     <section class="donation-section" id="donate">
         <h2>Join Hands in This Noble Mission</h2>
         <p>We warmly invite you to become a part of this noble and rewarding mission. You may contribute towards the purchase of the land by sponsoring one perch, half a perch, a quarter perch, or any amount within your means, and dedicate it as Sadaqah Jariyah (an ongoing charity) in the name of your beloved parents who have passed away.</p>
@@ -502,7 +470,6 @@
             </div>
         </div>
         
-        <!-- Contact Number in Donation Section -->
         <div class="contact-box">
             <i class="fa-solid fa-phone-volume"></i> Contact Us: +94 77 554 1238
         </div>
@@ -510,11 +477,7 @@
     </section>
 
     <footer>
-        <h3></h3>
-        <p style="margin-top: 1rem; font-size: 1.1rem;">
-            
-        </p>
-        <p style="margin-top: 0.5rem;"></p>
+        <h3>DHARUN NISWAAN GIRLS' COLLEGE</h3>
     </footer>
 
 </body>
